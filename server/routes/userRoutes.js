@@ -1,9 +1,6 @@
 import { Router } from 'express';
-console.log('++++++++++++++++++++++i was good here++++++++++++++++9');
 
 import UserController from '../controllers/UserController';
-
-console.log('++++++++++++++++++++++i was good here++++++++++++++++5');
 
 const router = Router();
 

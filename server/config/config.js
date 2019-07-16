@@ -2,8 +2,7 @@ require('babel-core/register');
 const dotenv = require('dotenv');
 
 dotenv.config();
-console.log('---------------------------------------what is the problem-------------------------------------', process.env.DB_HOST);
-export default {
+module.exports = {
   development: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,

@@ -1,12 +1,10 @@
-console.log('++++++++++++++++++++++i was good here++++++++++++++++1');
-
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import routes from './routes';
-// const isProduction = process.env.NODE_ENV === 'production';
+
 const port = process.env.PORT || 3000;
-console.log('++++++++++++++++++++++i was good here++++++++++++++++2');
+
 // Create global app object
 const app = express();
 
