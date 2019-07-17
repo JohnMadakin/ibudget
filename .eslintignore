@@ -2,3 +2,5 @@
 node_modules
 dist
 server/models/index.js
+tests
+jest.config.js

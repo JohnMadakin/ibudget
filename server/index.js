@@ -14,7 +14,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.urlencoded({
-  extended: false
+  extended: false,
 }));
 
 app.use(express.json());
@@ -34,8 +34,8 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     errors: {
-      message: err.message
-    }
+      message: err.message,
+    },
   });
 });
 
