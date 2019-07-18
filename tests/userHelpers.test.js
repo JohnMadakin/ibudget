@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+
 import userHelpers from '../server/helpers/userHelpers';
 
 // test('userHelpers class', () => {
@@ -9,6 +11,6 @@ import userHelpers from '../server/helpers/userHelpers';
 //   });
 // });
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(3).toBe(3);
+it('adds 1 + 2 to equal 3', () => {
+  expect(3).to.be.equal(3);
 });
