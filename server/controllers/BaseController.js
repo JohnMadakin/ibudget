@@ -36,7 +36,6 @@ export default class BaseController {
  *@description sends a mail
  * @param {string} to The recipient of the mail
  * @param {object} emailTemplate Message that the recipient should have
- * @param {object} linkUrl  The link the user should interact with in the mail
  * @returns {object} response from sendGrid api
  */
   sendNotificationEmail(to, emailTemplate) {
