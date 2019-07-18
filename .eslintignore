@@ -4,3 +4,4 @@ dist
 server/models/index.js
 tests
 jest.config.js
+server/migrations

@@ -6,16 +6,15 @@ export default (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     verified: DataTypes.BOOLEAN,
   }, {
-    defaultScope: {
-      attributes: {
-        exclude: ['createdAt', 'updatedAt'],
+    scopes: {
+      withoutPassword: {
+        attributes: { exclude: ['password'] },
       },
     },
   });
 
-  /* eslint-disable-next-line */
-  User.associate = function (models) {
-    // associations can be defined here
+  User.associate = (models) => {
+    User.hasOne(models.Profile);
   };
   return User;
 };
