@@ -15,9 +15,6 @@ class JWTHelper {
    * @returns {string} token
    */
   static generateToken(userObject, duration) {
-    if (!userObject || !userObject.userName) {
-      return false;
-    }
     const token = jsonWebToken.sign({ user: userObject }, SECRETKEY,
       { expiresIn: duration });
     return token;

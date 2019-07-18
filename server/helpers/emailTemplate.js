@@ -12,7 +12,7 @@ const emailTemplate = {
     html: `
         <h1 style="color: #6C54EC"> Welcome to iBudget.com</h1>
         <p style="color:black">Thank you for signing up
-        for an author's haven account
+        for an iBudget.com
         please click on the button to verify your email address</p>
         `,
   },
@@ -20,7 +20,7 @@ const emailTemplate = {
     from: {
       email: 'no-reply@ibudget.com',
     },
-    subject: 'Authors Haven account created',
+    subject: 'iBudget.com account created',
     text: 'Thank you for creating an account at iBudget.com',
     html: `
         <h1 style="color: #6C54EC"> Welcome to iBudget.com</h1>
@@ -45,10 +45,10 @@ const emailTemplate = {
       email: 'no-reply@ibudget.com',
     },
     subject: 'Account successfully confirmed',
-    text: 'Thank you for confirming your account at Autho\'r Haven',
+    text: 'Thank you for confirming your account at iBudget.com',
     html: `
         < h1 style = "color: #6C54EC" > Welcome to iBudget.com </h1>
-        <p>'Thank you for confirming your account at Author Haven'</p>
+        <p>'Thank you for confirming your account at iBudget.com'</p>
         Log in into your account to start contributing.
          `,
   },
