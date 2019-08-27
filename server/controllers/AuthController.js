@@ -92,7 +92,6 @@ export default class AuthController extends BaseController {
   async verifyEmail(req, res, next) {
     const { query: { token, email } } = req;
     let message = 'Email successfully confirmed';
-    let statusCode = 400;
     try {
       const decodedToken = JWTHelper.verifyToken(token);
 
@@ -102,15 +101,14 @@ export default class AuthController extends BaseController {
         this.linkUrl = `${process.env.VERIFYEMAIL_URL}?token=${newToken}&email=${email}`;
         super.sendNotificationEmail(email, emailTemplate.verification);
         message = 'Token has Expired. A new verification link have been sent';
-        return errorhandler.sendErrorResponse({ message, statusCode }, res);
+        return errorhandler.sendErrorResponse({ message, statusCode: 400 }, res);
       }
 
       const { user: { id, email: userEmail } } = decodedToken;
       const verifiedUser = await UserService.update(id, true);
       const userToken = JWTHelper.generateToken(verifiedUser, duration);
-      statusCode = 200;
       super.sendNotificationEmail(userEmail, emailTemplate.confirmation);
-      return super.successResponse(res, message, statusCode, userToken);
+      return super.successResponse(res, message, 200, userToken);
     } catch (err) {
       return next(err);
     }
