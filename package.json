@@ -12,7 +12,9 @@
     "db:reset": "node_modules/.bin/sequelize db:migrate:undo:all",
     "linter": "./node_modules/eslint/bin/eslint.js './**/*.js'",
     "test": "export NODE_ENV=test && npm run db:reset && npm run db:migrate && nyc --reporter=text --reporter=lcov mocha ./tests --require babel-polyfill --require babel-register --timeout=5000 --exit --recursive",
-    "coverage": "jest --collectCoverageFrom=server/**.js --coverage server"
+    "coverage": "jest --collectCoverageFrom=server/**.js --coverage server",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -35,7 +37,8 @@
     "mysql2": "^1.6.5",
     "sequelize": "^5.10.1",
     "sequelize-cli": "^5.5.0",
-    "validator": "^11.1.0"
+    "validator": "^11.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -57,5 +60,6 @@
     "sinon-chai": "^3.3.0",
     "nyc": "^13.3.0",
     "sequelize-test-helpers": "^1.0.6"
-  }
+  },
+  "snyk": true
 }
